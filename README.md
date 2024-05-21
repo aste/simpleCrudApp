@@ -28,7 +28,6 @@ Before you begin, ensure you have met the following requirements:
    ```bash
    cd simpleCrudApp
 
-
 3. Install the dependencies:
    ```bash
    npm install
