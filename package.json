@@ -1,0 +1,14 @@
+{
+  "name": "simplecrudapp",
+  "version": "1.0.0",
+  "description": "This repository contains a simple CRUD (Create, Read, Update, Delete) application built with Express.js and MongoDB",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
