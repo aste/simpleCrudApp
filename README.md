@@ -1,6 +1,6 @@
 # A simple CRUD App with Express and MongoDB
-This repository contains a simple CRUD (Create, Read, Update, Delete) application built with Express.js and MongoDB
 
+This repository contains a simple CRUD (Create, Read, Update, Delete) application built with Express.js and MongoDB
 
 
 ## Features
@@ -22,11 +22,11 @@ Before you begin, ensure you have met the following requirements:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/crud-express-mongodb.git
+   git clone https://github.com/aste/simpleCrudApp.git
 
 2. Navigate to the project directory:
    ```bash
-   cd crud-express-mongodb
+   cd simpleCrudApp
 
 
 3. Install the dependencies:
@@ -34,3 +34,46 @@ Before you begin, ensure you have met the following requirements:
    npm install
 
 ## Configuration
+
+1. Create a .env file in the root of the project.
+
+2. Add your MongoDB URI and port number to the .env file:
+   ```bash
+   DATABASE_URL=mongodb://localhost:27017/mydatabase
+   PORT=3000
+
+## Usage
+
+1. Start the application:
+   ```bash
+   npm start
+
+2. Open your browser and navigate to `http://localhost:3000`
+
+## Project Structure
+
+simpleCrudApp/
+├── public/
+│   ├── css/
+│   ├── js/
+├── routes/
+│   └── index.js
+├── views/
+│   ├── index.ejs
+│   ├── edit.ejs
+│   ├── create.ejs
+├── .env
+├── app.js
+├── package.json
+└── README.md
+
+## Acknowledgements
+
+Zell Liew's CRUD Tutorial
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## License
+This project is open source and available under the MIT License.
