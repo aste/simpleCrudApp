@@ -50,23 +50,6 @@ Before you begin, ensure you have met the following requirements:
 
 2. Open your browser and navigate to `http://localhost:3000`
 
-## Project Structure
-
-simpleCrudApp/
-├── public/
-│   ├── css/
-│   ├── js/
-├── routes/
-│   └── index.js
-├── views/
-│   ├── index.ejs
-│   ├── edit.ejs
-│   ├── create.ejs
-├── .env
-├── app.js
-├── package.json
-└── README.md
-
 ## Acknowledgements
 
 Zell Liew's CRUD Tutorial
