@@ -16,6 +16,10 @@ app.listen(3000, function () {
   });
 });
 
-MongoClient.connect("mongodb-connection-string", (err, client) => {
-  // ... do something here
-});
+MongoClient.connect(
+  "mongodb+srv://aste:4EtTs9h3AOrGljr8@yodacluster.vpzp8qm.mongodb.net/?retryWrites=true&w=majority&appName=yodaCluster",
+  (err, client) => {
+    if (err) return console.log(err);
+    console.log("Connected to Database");
+  }
+);
