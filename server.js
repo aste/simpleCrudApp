@@ -5,15 +5,8 @@ const app = express();
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.listen(3000, function () {
-  // console.log("May Node be with you");
-  app.get("/", (req, res) => {
-    res.sendFile(__dirname + "/index.html");
-  });
-  app.post("/quotes", (req, res) => {
-    // console.log("Hellooooooooooooooooo!");
-    console.log(req.body);
-  });
+app.get("/", (req, res) => {
+  res.sendFile(__dirname + "/index.html");
 });
 
 MongoClient.connect(
@@ -21,5 +14,23 @@ MongoClient.connect(
 )
   .then((client) => {
     console.log("Connected to Database");
+    const db = client.db("yoda-quotes");
+    const quoteCollection = db.collection("quotes");
+
+    app.post("/quotes", (req, res) => {
+      quoteCollection
+        .insertOne(req.body)
+        .then((result) => {
+          res.redirect('/');
+        })
+        .catch((error) => {
+          console.error(error);
+          res.sendStatus(500);
+        });
+    });
+
+    app.listen(3000, function () {
+      console.log("Server is running on port 3000");
+    });
   })
-  .catch((error) => console.error(error));
+  .catch(console.error);
