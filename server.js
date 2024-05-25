@@ -16,7 +16,13 @@ MongoClient.connect(
     const quoteCollection = db.collection("quotes");
 
     app.get("/", (req, res) => {
-      res.sendFile(__dirname + "/index.html");
+      quoteCollection
+        .find()
+        .toArray()
+        .then((results) => {
+          res.render("index.ejs", { quotes: results });
+        })
+        .catch((error) => console.error(error));
     });
 
     app.post("/quotes", (req, res) => {
@@ -29,17 +35,6 @@ MongoClient.connect(
           console.error(error);
           res.sendStatus(500);
         });
-    });
-
-    app.get("/quotes", (req, res) => {
-      quoteCollection
-        .find()
-        .toArray()
-        .then((results) => {
-          console.log(results);
-          res.json(results);
-        })
-        .catch((error) => console.error(error));
     });
 
     app.listen(3000, function () {

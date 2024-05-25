@@ -4,12 +4,22 @@
     <meta charset="UTF-8" />
     <title>Yoda Quote App</title>
   </head>
+
   <body>
-    <h1>May the Node (and Express) Be with You</h1>
+    <h1>May the Node (and Express) Be with You!</h1>
+
     <form action="/quotes" method="POST">
       <input type="text" placeholder="name" name="name" />
       <input type="text" placeholder="quote" name="quote" />
       <button type="submit">Submit</button>
     </form>
+    <% for(var i = 0; i < quotes.length; i++) {%>
+    <li class="quote">
+      <!-- Output name from the iterated quote object -->
+      <span><%= quotes[i].name %></span>:
+      <!-- Output quote from the iterated quote object -->
+      <span><%= quotes[i].quote %></span>
+    </li>
+    <% } %>
   </body>
 </html>
