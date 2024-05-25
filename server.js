@@ -3,6 +3,8 @@ const bodyParser = require("body-parser");
 const MongoClient = require("mongodb").MongoClient;
 const app = express();
 
+app.set("view engine", "ejs");
+
 app.use(bodyParser.urlencoded({ extended: true }));
 
 MongoClient.connect(
@@ -28,7 +30,6 @@ MongoClient.connect(
           res.sendStatus(500);
         });
     });
-
 
     app.get("/quotes", (req, res) => {
       quoteCollection
