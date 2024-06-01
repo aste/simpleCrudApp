@@ -1,6 +1,5 @@
 const updateButton = document.querySelector("#update-button");
 const deleteButton = document.querySelector("#delete-button");
-
 const vaderQuotes = [
   "I am your father.",
   "The Force is strong with this one.",
@@ -15,6 +14,7 @@ const vaderQuotes = [
   "No. I am your father.",
   "Impressive. Most impressive.",
 ];
+const vaderQuotesLength = vaderQuotes.length;
 
 updateButton.addEventListener("click", (_) => {
   fetch("/quotes", {
@@ -22,7 +22,7 @@ updateButton.addEventListener("click", (_) => {
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
       name: "Darth Vader",
-      quote: `${vaderQuotes[Math.floor(Math.random() * vaderQuotes.length)]}`,
+      quote: `${vaderQuotes[Math.floor(Math.random() * vaderQuotesLength)]}`,
     }),
   })
     .then((res) => {
