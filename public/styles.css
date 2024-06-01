@@ -1,0 +1,103 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #1b1b1b;
+  color: #f0f0f0;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  color: #ffe81f;
+  margin-top: 50px;
+}
+
+h2 {
+  margin-top: 0px;
+}
+
+form,
+.updatePut,
+.deleteDelete {
+  width: 300px;
+  margin: 20px 0;
+  padding: 20px;
+  background: #2c2c2c;
+  border: 1px solid #444;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+form input {
+  margin: 5px 0;
+  padding: 10px;
+  width: calc(100% - 22px);
+  border: 1px solid #444;
+  border-radius: 4px;
+  background-color: #333;
+  color: #f0f0f0;
+}
+
+form button,
+.action-section button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #ffe81f;
+  color: #1b1b1b;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+form button:hover,
+.action-section button:hover {
+  background-color: #ffd700;
+}
+
+.createPost,
+.updatePut,
+.deleteDelete,
+.readGet {
+  width: 600px;
+}
+
+.readGet {
+  width: 600px;
+  margin-top: 10px;
+  padding: 10px 20px;
+  list-style: none;
+  background: #2c2c2c;
+  border: 1px solid #444;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.readGet span {
+  display: inline;
+}
+
+#update-button,
+#delete-button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #ff4500;
+  color: #f0f0f0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#update-button:hover,
+#delete-button:hover {
+  background-color: #ff6347;
+}
+
+#delete-button {
+  background-color: #0066ff;
+}
+
+#delete-button:hover {
+  background-color: #4794ff;
+}
