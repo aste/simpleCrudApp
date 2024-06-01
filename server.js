@@ -41,7 +41,7 @@ MongoClient.connect(
     app.put("/quotes", (req, res) => {
       quoteCollection
         .findOneAndUpdate(
-          { name: "Yoda" },
+          { name: { $ne: "Darth Vader" } },
           {
             $set: {
               name: req.body.name,
@@ -62,6 +62,9 @@ MongoClient.connect(
       quoteCollection
         .deleteOne({ name: req.body.name })
         .then((result) => {
+          if (result.deletedCount === 0) {
+            return res.json("No quote to delete");
+          }
           res.json(`Deleted Darth Vader's quote`);
         })
         .catch((error) => console.error(error));
